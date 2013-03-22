@@ -1,0 +1,19 @@
+#!/usr/bin/env node
+/*global process,require*/
+
+var config = require('config');
+
+var Jarvis = require('../lib/jarvis.js');
+var jarvis = new Jarvis(config);
+
+jarvis.bootUp();
+
+process.on('SIGINT', function() {
+	process.emit('SIGTERM');
+});
+
+process.on('SIGTERM', function() {
+	jarvis.shutdown(function() {
+		process.exit(0);
+	});
+});
