@@ -38,7 +38,7 @@ describe('API', function() {
 	});
 
 	describe('GET /modules', function() {
-		it('should return an object', function(done) {
+		it('should return an array', function(done) {
 			request.get({
 				url: HOST + '/modules',
 				json: true
@@ -48,14 +48,14 @@ describe('API', function() {
 				}
 
 				response.statusCode.should.equal(200);
-				body.should.be.an.instanceOf(Object);
+				body.should.be.an.instanceOf(Array);
 				done();
 			});
 		});
 	});
 
 	describe('GET /actions', function() {
-		it('should return an object', function(done) {
+		it('should return an array', function(done) {
 			request.get({
 				url: HOST + '/actions',
 				json: true
@@ -65,7 +65,7 @@ describe('API', function() {
 				}
 
 				response.statusCode.should.equal(200);
-				body.should.be.an.instanceOf(Object);
+				body.should.be.an.instanceOf(Array);
 				done();
 			});
 		});
