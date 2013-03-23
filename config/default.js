@@ -16,13 +16,13 @@ module.exports = {
 			modulePath.toString()
 		],
 		prefix: 'jarvis-module-',
-		settings: {}
+		config: {}
 	},
 
 	brain: {
 		mode: null,
 		prefix: 'jarvis-brain-',
-		settings: {}
+		config: {}
 	},
 
 	debug: false
